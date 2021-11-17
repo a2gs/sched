@@ -1,0 +1,23 @@
+#####PERIODICIDADE:
+#MENSAL   M
+#DIARIA   D
+#HORARIA  H
+#EVENTUAL E
+
+#####STATUS:
+#LIVRE_PARA_EXECUCAO I
+#EXECUTANDO          E
+#FINALIZADO          F
+
+20101220-091011 FE ls -laF >> out2_test
+20101220-091011 FE echo "executando" >> out4_imediato
+
+# todo dia, apartir de 15/12/2010, as 13h será executado
+20101214-121617 FD echo "comando 1" >> out1_diario; sleep 25
+
+# todo mes, apartir de 15/12/2010, as 13h de todo dia 15 será executado
+20101214-081011 IM mbcmd tasks
+20101214-081011 IM echo "comando 3" >> out3_mensal; sleep 25
+
+# todo hora, apartir de 15/12/2010, as 13h será executado
+2101213-032010 IH echo "comando 2" >> out2_horario; sleep 25
